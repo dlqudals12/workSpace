@@ -1,0 +1,127 @@
+<!--
+ @Date : 2023. 1. 31.
+ @�옉�꽦�옄 : 諛뺤꽦�솚
+ @�꽕紐� : �쉶�썝媛��엯 �셿猷뚰럹�씠吏�
+-->
+
+
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<meta charset="utf-8">
+<title>�쉶�썝媛��엯�셿猷� | �뜑�븳�꽟�떣而�</title>
+
+<th:block th:replace="member/head :: headFragment"></th:block>
+
+<body>
+	<script>
+		(function() {
+			if (document.cookie.indexOf("thehyundai=true") > -1) {
+				var d = new Date();
+				d.setTime(d.getTime() + 365 * 24 * 60 * 60 * 1000);
+				document.cookie = "sslvisit=true; expires=" + d.toUTCString()
+						+ "; path=/";
+			} else if (document.cookie.indexOf("rakuten=") > -1) {
+				var d = new Date();
+				d.setTime(d.getTime() + 365 * 24 * 60 * 60 * 1000);
+				document.cookie = "sslvisit1=true; expires=" + d.toUTCString()
+						+ "; path=/";
+			} else if (document.cookie.indexOf("hyundaihmall=true") > -1) {
+				var d = new Date();
+				d.setTime(d.getTime() + 365 * 24 * 60 * 60 * 1000);
+				document.cookie = "sslvisit2=true; expires=" + d.toUTCString()
+						+ "; path=/";
+			} else if (document.cookie.indexOf("fromSite") > -1) {
+				var d = new Date();
+				d.setTime(d.getTime() + 365 * 24 * 60 * 60 * 1000);
+				document.cookie = "sslvisit3=" + "" + "; expires="
+						+ d.toUTCString() + "; path=/";
+			} else if (document.cookie.indexOf("recommender") > -1) {
+				var d = new Date();
+				d.setTime(d.getTime() + 365 * 24 * 60 * 60 * 1000);
+				document.cookie = "sslvisit4=" + "" + "; path=/";
+			}
+		})();
+	</script>
+	<!-- Loading -->
+	<div style="display: none">
+		<div id="loadingBarDiv" style="display: none"></div>
+	</div>
+	<!-- //Loading -->
+
+	<form id="CSRFForm" action="/ko/member/joincomplete" method="post">
+		<div>
+			<input type="hidden" name="CSRFToken" value="cd9050c6-105b-4660-8eff-bcdaba320336" />
+		</div>
+	</form>
+	<div id="mapleMainPopwrap"
+		style="position: fixed; top: 50%; left: 50%; width: 81.333333%; z-index: 805; transform: translate(-50%, -50%); display: none;"
+	></div>
+
+	<div class="layerArea" id="mapleLayer" style="display: none">
+		<div class="layerBg"></div>
+	</div>
+
+	<!-- ################## hsome_allContents_wrapper | 챘쨀쨍챘짭쨍 챙쨩짢챠혚혨챙쨍혻 챙혱혖챙혰짯 ################## -->
+	<div class="hsome_allContents_wrapper">
+		<div class="hsome_allContents">
+			<script type="text/javascript">
+				function goMainpage() {
+					window.sessionStorage.removeItem("moveYn");
+					location.href = "/ko/main";
+				}
+			</script>
+
+			<!-- ################## header ################## -->
+			<header class="hsome_header">
+				<h1 class="h_ttl ellipsis" id="headerTitle">媛꾪렪�쉶�썝媛��엯 媛��엯�셿猷�</h1>
+				<a href="/ko/main" class="h_top_home"><span>�솃</span></a> <a href="javascript:noLink();" onclick="goBack();" class="h_prev">�씠�쟾 �럹�씠吏�濡� 媛�湲�</a>
+				<ul class="h_gnbMenu">
+					<li class="search"><a href="/ko/mobilecommon/search" onclick="GA_Event('怨듯넻', '�뿤�뜑', '寃��깋');"><span>search</span></a></li>
+					<li class="cart"><a href="/ko/shoppingbag" onclick="GA_Event('怨듯넻', '�뿤�뜑', '�눥�븨諛�');"><span>cart</span><i>0</i></a></li>
+				</ul>
+			</header>
+			<!-- //################## header ################## -->
+
+			<!-- This script is for AceCounter START -->
+			<script language="javascript" type="text/javascript">
+				var _jn = "join"; //  媛��엯�깉�눜 ( 'join','withdraw' )
+				var _jid = "95nanoland@naver.com"; // 媛��엯�떆�엯�젰�븳 ID
+			</script>
+			<!-- AceCounter END -->
+
+			<script type="text/javascript">
+				//<![CDATA[
+				$(document).ready(function() {
+					$("#mainBtn").click(function() {
+						location.href = "/ko/";
+					});
+
+					$("#loginBtn").click(function() {
+						location.href = "/ko/member/login";
+					});
+
+					fbq("track", "CompleteRegistration", {});
+				});
+
+				//]]>
+			</script>
+			<!-- contents s -->
+			<div class="hsome_contents mbr_signup_wrap">
+				<div class="mem_ct_wrap">
+					<div class="txt_wrap new_cmt">
+						<h5>�븳�꽟�넻�빀紐곗쓽 �쉶�썝�씠 �릺�떊 寃껋쓣 異뺥븯�뱶由쎈땲�떎.</h5>
+						<p>
+							�엯�젰�븯�떊 媛쒖씤 �젙蹂대뒗 <a href="/ko/mypage/personInfomationChange">留덉씠�럹�씠吏� &gt; �굹�쓽�젙蹂닿�由� &gt; 媛쒖씤�젙蹂대�寃�</a>�뿉�꽌 諛붾줈 �닔�젙媛��뒫�빀�땲�떎.
+						</p>
+					</div>
+					<div class="btn_wrap">
+						<button class="btn btn_bg_b btn_login" id="loginBtn">濡쒓렇�씤</button>
+						<button class="btn btn_bd_g btn_login mt20" id="mainBtn">硫붿씤�쑝濡� �씠�룞</button>
+					</div>
+				</div>
+			</div>
+			<!-- //################## contents ################## -->
+		</div>
+	</div>
+	<th:block th:replace="member/footer :: footFragment"></th:block>
+</body>
+</html>
